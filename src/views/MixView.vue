@@ -62,6 +62,7 @@
           :clearable="false"
           class="mb-2"
           :class="{'is-invalid': errorShow['testDate'] === true}"
+          value-type="format"
           ></DatePicker>
           <br>
           <small class="text-danger" v-if="errorShow['testDate'] === true">報考日期 為必填</small>
@@ -79,6 +80,7 @@
           placeholder="選擇時段"
           v-model:value="time"
           :class="{'is-invalid': errorShow['time'] === true}"
+          value-type="format"
         ></DatePicker>
         <br>
         <small class="text-danger" v-if="errorShow['time'] === true">選擇時段 為必填</small>
@@ -99,18 +101,24 @@
   <!--//* 檢查資料 -->
   <h2 class="text-center mb-3">---  檢查資料  ---</h2>
   <ul class="row">
-    <li class="col-5 mb-2">
+    <li class="col-3 mb-2">
       <h3>教師資料</h3>
       <p>姓名：{{ form.name }}</p>
       <p>信箱：{{ form.email }}</p>
     </li>
-    <li class="col-5 mb-2">
+    <li class="col-3 mb-2">
       <h3>考卷範圍設定</h3>
       考試範圍：<strong v-for="item in form.range" :key="item" class="mb-1">{{ item }},</strong>
     </li>
-    <li class="col-2">
+    <li class="col-3">
       <h3>考卷類型</h3>
       <p>類型：{{ form.type}}</p>
+    </li>
+    <li class="col-3">
+      <h3>報考日期</h3>
+      <p v-if="testDate.length > 0"> {{ testDate[0] }} ~ {{ testDate[1] }} </p>
+      <h3>選擇時段</h3>
+      <p> {{time}} </p>
     </li>
   </ul>
 </template>
