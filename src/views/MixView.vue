@@ -20,7 +20,7 @@
       </div>
       <div class="col-6">
         <!--//* 範圍設定 -->
-        <div class="mb-3">
+        <div class="mb-3 p-2" :class="{ 'is-invalid': errors['範圍設定'] }">
           <h2>範圍設定</h2>
           <Field type="checkbox" name="範圍設定" rules="required" value="自然" v-model="form.range"
             :class="{ 'is-invalid': errors['範圍設定'] }" id="自然" />
@@ -34,7 +34,7 @@
           <Error-message name="範圍設定" class="invalid-feedback"></Error-message>
         </div>
         <!--//* 考卷類型 -->
-        <div class="mb-3">
+        <div class="mb-3 p-2" :class="{ 'is-invalid': errors['考卷類型'] }">
           <h2>考卷類型</h2>
           <Field type="radio" name="考卷類型" rules="required" value="選擇題"
             :class="{ 'is-invalid': errors['考卷類型'] }" id="選擇題" v-model="form.type" />
