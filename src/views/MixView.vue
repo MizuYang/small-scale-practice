@@ -52,7 +52,7 @@
         </div>
       </div>
       <!--//* 日期 -->
-      <div class="col-4 mb-4">
+      <div class="col-4 mb-4" :class="{ 'is-invalid': errors['檔案'] }">
         <h2>報考日期</h2>
         <section>
           <DatePicker v-model:value="testDate" confirm="true" confirm-text="確認修改"
@@ -87,9 +87,22 @@
       </div>
 
       <!-- //* 上傳 -->
-      <div class="col-8">
+      <div class="col-4">
         <Upload></Upload>
       </div>
+      <div class="col-4" :class="{ 'is-invalid': errors['檔案'] }">
+        <h2>補充圖片上傳(<span class="text-danger">必填</span>)</h2>
+        <Field type="file" name="檔案"
+        :rules="{ mimes: ['image/jpeg','image/png','image/jpg','image/svg','image/gif'], required: true }" :class="{ 'is-invalid': errors['檔案'] }"
+          id="field" @change="showImg" />
+        <Error-message name="檔案" class="invalid-feedback"></Error-message>
+        <ul>
+          <li class="mt-2">使用套件驗證</li>
+          <li>可使用類型：<code>jpg | svg | jpeg | png | gif</code></li>
+        </ul>
+        <img :src="fileImgUrl" alt="預覽圖片" width="300" v-if="fileImgUrl">
+      </div>
+      <hr>
 
       <button
         class="btn me-2 btn-outline-primary"
@@ -143,7 +156,8 @@ export default {
       },
       testDate: [],
       time: '',
-      errorShow: {}
+      errorShow: {},
+      fileImgUrl: ''
     }
   },
   methods: {
@@ -173,6 +187,10 @@ export default {
       } else {
         this.errorShow.time = false
       }
+    },
+    showImg (e) {
+      const file = e.target.files[0]
+      this.fileImgUrl = URL.createObjectURL(file)
     }
   }
 }

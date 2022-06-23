@@ -3,21 +3,21 @@
     <h2>圖片上傳</h2>
     <input type="file" @change="getFileInfo">
   </div>
-  <div class="d-flex m-3 p-3">
-    <ul class="me-4" v-if="status > 0">
-      <li>上傳狀態：<span class="rounded-circle me-2 px-3 py-1"
-        :class="`bg-${status===1? 'success': 'danger'}`"></span>
-        <i v-if="status===uploadStatus.failSize" class="text-danger">*您的檔案超過限制的 "30MB"，您的檔案大小為 "{{ fileSizeMB }} MB"</i>
-        <i v-if="status===uploadStatus.failFormat" class="text-danger">*您的檔案格式不正確，您上傳的是 "{{ fileType }}"</i>
-      </li>
-      <li v-if="status===1">上傳日期：{{ uploadDate }}</li>
-      <li>檔案名稱：{{ fileName }}</li>
-      <li class="mb-3">檔案大小：{{ fileSizeMB }} MB</li>
-    </ul>
-    <div>
-      <img :src="fileImgUrl" alt="預覽圖片" width="300" v-if="status===1">
-    </div>
-  </div>
+  <ul class="ps-0">
+    <li>元件匯入，未使用表單驗證</li>
+    <li>自行寫 JS 驗證：檔案 30MB、檔案型別</li>
+  </ul>
+  <ul class="border" v-if="status > 0">
+    <li>上傳狀態：<span class="rounded-circle me-2 px-3 py-1"
+      :class="`bg-${status===1? 'success': 'danger'}`"></span>
+      <i v-if="status===uploadStatus.failSize" class="text-danger">*檔案超過限制的 "30MB"，檔案大小為 "{{ fileSizeMB }} MB"</i>
+      <i v-if="status===uploadStatus.failFormat" class="text-danger">*檔案格式不正確，您上傳的是 "{{ fileType }}"</i>
+    </li>
+    <li v-if="status===1">上傳日期：{{ uploadDate }}</li>
+    <li>檔案名稱：{{ fileName }}</li>
+    <li class="mb-3">檔案大小：{{ fileSizeMB }} MB</li>
+  </ul>
+  <img :src="fileImgUrl" alt="預覽圖片" width="300" v-if="status===1">
 </template>
 
 <script>

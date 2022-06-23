@@ -13,7 +13,7 @@ import {
   Field, Form, ErrorMessage, defineRule, configure
 } from 'vee-validate'
 //* 匯入 vee-validate 相關規則
-import { required, email, min, max } from '@vee-validate/rules'
+import { required, email, min, max, image, mimes } from '@vee-validate/rules'
 //* 匯入多國語系的功能
 import { localize, setLocale } from '@vee-validate/i18n'
 //* 匯入繁體中文語系檔案
@@ -27,6 +27,8 @@ defineRule('required', required)
 defineRule('email', email)
 defineRule('min', min)
 defineRule('max', max)
+defineRule('image', image)
+defineRule('mimes', mimes)
 // 設定 vee-validate 全域規則
 configure({
   generateMessage: localize({ zh_TW: zhTW }), // 載入繁體中文語系
