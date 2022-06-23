@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_template"]=self["webpackChunkvue_template"]||[]).push([[16],{4016:function(e,n,t){t.r(n),t.d(n,{default:function(){return i}});var u=t(3396);const r=(0,u.Uk)("師生問答 D "),a=(0,u._)("br",null,null,-1),l=(0,u.Uk)(),c=(0,u._)("textarea",{name:"",id:"",cols:"30",rows:"10"},null,-1);function o(e,n,t,o,s,d){return(0,u.wg)(),(0,u.iD)(u.HY,null,[r,a,l,c],64)}var s={components:{},data(){return{}},watch:{},methods:{},mounted(){}},d=t(89);const f=(0,d.Z)(s,[["render",o]]);var i=f}}]);
+//# sourceMappingURL=16.8026e19e.js.map

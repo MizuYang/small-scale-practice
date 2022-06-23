@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_template"]=self["webpackChunkvue_template"]||[]).push([[971],{8971:function(e,n,t){t.r(n),t.d(n,{default:function(){return h}});var u=t(3396);const r=(0,u.Uk)("題庫搜尋 C "),l=(0,u._)("br",null,null,-1),a=(0,u.Uk)(),c=(0,u._)("input",{type:"search",placeholder:"請輸入考題名稱"},null,-1);function o(e,n,t,o,s,p){return(0,u.wg)(),(0,u.iD)(u.HY,null,[r,l,a,c],64)}var s={components:{},data(){return{}},watch:{},methods:{},mounted(){}},p=t(89);const d=(0,p.Z)(s,[["render",o]]);var h=d}}]);
+//# sourceMappingURL=971.253de749.js.map
